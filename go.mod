@@ -3,6 +3,7 @@ module github.com/ZiedYousfi/aith
 go 1.25.2
 
 require (
+	github.com/a-h/templ v0.3.943 // indirect
 	github.com/andybalholm/brotli v1.1.0 // indirect
 	github.com/ebitengine/purego v0.8.3-0.20250507171810-1638563e3615 // indirect
 	github.com/gofiber/fiber/v2 v2.52.9 // indirect
@@ -16,5 +17,5 @@ require (
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
 	github.com/valyala/fasthttp v1.51.0 // indirect
 	github.com/valyala/tcplisten v1.0.0 // indirect
-	golang.org/x/sys v0.29.0 // indirect
+	golang.org/x/sys v0.34.0 // indirect
 )
