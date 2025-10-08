@@ -1,0 +1,35 @@
+package main
+
+func main(hey string) {
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test</title>
+  <link rel="stylesheet" href="/static/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.7/dist/htmx.min.js"
+    integrity="sha384-ZBXiYtYQ6hJ2Y0ZNoYuI+Nq5MqWBr+chMrS/RkXpNzQCApHEhOt2aY8EJgqwHLkJ"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header>
+    <h1>{ hey }</h1>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+    </nav>
+  </header>
+  <main id="content" hx-swap="innerHTML" hx-trigger="load" hx-target="#content" hx-get="/">
+    { yield }
+  </main>
+  <footer>
+    <p>&copy; 2024 My Website</p>
+  </footer>
+</body>
+
+</html>
+}
