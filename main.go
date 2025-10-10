@@ -1,12 +1,12 @@
 package main
 
 import (
-	"bytes"
-	"context"
 	_ "embed"
 
 	"github.com/ZiedYousfi/aith/templates"
+	"github.com/a-h/templ"
 	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/middleware/adaptor"
 )
 
 func main() {
@@ -18,13 +18,7 @@ func main() {
 }
 
 func hello(c *fiber.Ctx) error {
-	component := templates.Layout("Welcome to My Website")
-
-	var buf bytes.Buffer
-	if err := component.Render(context.Background(), &buf); err != nil {
-		return err
-	}
-
-	c.Set("Content-Type", "text/html")
-	return c.SendString(buf.String())
+	t := templates.Layout("ee")
+	handler := adaptor.HTTPHandler(templ.Handler(t))
+	return handler(c)
 }
